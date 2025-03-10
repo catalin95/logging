@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <iterator>
-#include <utility>
 
 namespace logger
 {
@@ -57,8 +56,8 @@ namespace logger
         std::cout << '\n';
     }
 
-    template<typename first, typename second>
-    auto log_pair(std::pair<first, second> pair) -> void
+    template<typename Pair>
+    auto log_pair(const Pair& pair) -> void
     {
         std::cout << pair.first << '\t' << pair.second << '\n';
     }
