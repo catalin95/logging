@@ -14,9 +14,9 @@ namespace logger
     template<typename T>
     auto log_list(const T& input) -> void
     {
-        for (auto it = std::begin(input); it < std::end(input); ++it)
+        for (const auto el : input)
         {
-            std::cout << *it << '\t';
+            std::cout << el << '\t';
         }
 
         std::cout << '\n';
@@ -60,5 +60,14 @@ namespace logger
     auto log_pair(const Pair& pair) -> void
     {
         std::cout << pair.first << '\t' << pair.second << '\n';
+    }
+
+    template<typename Map>
+    auto log_map(const Map& map) -> void
+    {
+        for (const auto pair : map)
+        {
+            std::cout << pair.first << '\t' << pair.second << '\n';
+        }
     }
 }
